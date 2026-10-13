@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#071827">
+	<title>La huella de tu voz | Laboratorio interactivo</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="#inicio">
+			<span class="brand-icon">◉</span>
+			<span>HUELLA<span class="brand-light">VOZ</span></span>
+		</a>
+		<span class="header-label">LABORATORIO INTERACTIVO DE CIENCIA</span>
+	</header>
+
+	<main>
+		<section id="inicio" class="hero">
+			<div class="hero-content">
+				<div class="eyebrow">CIENCIA PÚBLICA · EXPERIENCIA INTERACTIVA</div>
+				<h1>Tu voz cuenta<br><em>más que palabras.</em></h1>
+				<p class="hero-description">
+					Cada vez que hablas, produces sonidos, pausas, palabras
+					e ideas. Descubre cómo la ciencia puede hacer visible
+					esa riqueza.
+				</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="#laboratorio">
+						Explorar mi voz <span>↗</span>
+					</a>
+					<a class="btn btn-secondary" href="#descubre">
+						¿Qué descubriré?
+					</a>
+				</div>
+				<p class="hero-note">
+					Experiencia gratuita · Para personas adultas · Sin diagnósticos
+				</p>
+			</div>
+			<div class="hero-art" aria-hidden="true">
+				<div class="orb orb-one"></div>
+				<div class="orb orb-two"></div>
+				<div class="hero-ring ring-one"></div>
+				<div class="hero-ring ring-two"></div>
+				<div class="hero-ring ring-three"></div>
+				<div class="hero-center">♫</div>
+				<div class="floating-label label-one">RITMO</div>
+				<div class="floating-label label-two">PALABRAS</div>
+				<div class="floating-label label-three">IDEAS</div>
+			</div>
+		</section>
+
+		<section id="descubre" class="section section-dark">
+			<div class="section-heading">
+				<span class="eyebrow">01 / LA CIENCIA DETRÁS DEL HABLA</span>
+				<h2>Una voz. Muchas dimensiones.</h2>
+				<p>
+					Hablar es coordinar procesos acústicos, lingüísticos
+					y cognitivos. Cada dimensión revela algo diferente
+					sobre un momento de comunicación.
+				</p>
+			</div>
+			<div class="feature-grid">
+				<article class="feature-card">
+					<span class="feature-number">01</span>
+					<div class="feature-icon">〰</div>
+					<h3>El ritmo de tu voz</h3>
+					<p>Observa la señal sonora, sus variaciones de intensidad y los silencios.</p>
+					<span class="feature-tag">ACÚSTICA Y PROSODIA</span>
+				</article>
+				<article class="feature-card">
+					<span class="feature-number">02</span>
+					<div class="feature-icon">Aa</div>
+					<h3>Las palabras que eliges</h3>
+					<p>Explora cómo el lenguaje transforma sonidos en palabras y significados.</p>
+					<span class="feature-tag">LENGUAJE Y VOCABULARIO</span>
+				</article>
+				<article class="feature-card">
+					<span class="feature-number">03</span>
+					<div class="feature-icon">✧</div>
+					<h3>Las ideas que conectas</h3>
+					<p>Descubre relaciones entre conceptos presentes en tu relato.</p>
+					<span class="feature-tag">DISCURSO Y SIGNIFICADO</span>
+				</article>
+			</div>
+		</section>
+
+		<section id="laboratorio" class="section lab-section">
+			<div class="section-heading">
+				<span class="eyebrow">02 / TU LABORATORIO PERSONAL</span>
+				<h2>Haz visible tu manera de hablar.</h2>
+				<p>
+					Piensa en un lugar que recuerdes con cariño y cuenta
+					qué lo hace especial. Puedes hablar hasta 60 segundos.
+				</p>
+			</div>
+
+			<div class="lab-layout">
+				<div class="recorder-panel">
+					<div class="panel-topline">
+						<span class="panel-kicker">ESTUDIO DE VOZ</span>
+						<span id="recordingStatus" class="status-pill">LISTO PARA COMENZAR</span>
+					</div>
+
+					<div class="recorder-visual">
+						<canvas id="waveCanvas" width="900" height="240"
+							aria-label="Visualización de la señal sonora"></canvas>
+						<div class="visual-center">
+							<span id="timer">00:00</span>
+							<span class="timer-caption">TIEMPO DE GRABACIÓN</span>
+						</div>
+					</div>
+
+					<div class="recorder-controls">
+						<button id="recordBtn" class="btn btn-primary" type="button">
+							● Comenzar grabación
+						</button>
+						<button id="stopBtn" class="btn btn-secondary" type="button" disabled>
+							■ Detener
+						</button>
+						<button id="demoBtn" class="btn btn-ghost" type="button">
+							Ver demostración
+						</button>
+					</div>
+
+					<p id="statusMessage" class="status-message" role="status">
+						Al comenzar, tu navegador solicitará permiso para utilizar el micrófono.
+					</p>
+
+					<audio id="audioPlayback" controls hidden></audio>
+					<p class="privacy-note">
+						Tu grabación se procesa en esta experiencia de demostración.
+						No la publicamos ni la guardamos en nuestro servidor.
+						El reconocimiento de voz, cuando está disponible,
+						puede utilizar servicios del proveedor del navegador.
+					</p>
+				</div>
+
+				<div class="instructions-panel">
+					<span class="panel-kicker">TU EXPERIENCIA</span>
+					<h3>¿Cómo funciona?</h3>
+					<div class="instruction">
+						<span>01</span>
+						<div>
+							<strong>Piensa</strong>
+							<p>Recuerda un lugar, una experiencia o una historia breve.</p>
+						</div>
+					</div>
+					<div class="instruction">
+						<span>02</span>
+						<div>
+							<strong>Habla</strong>
+							<p>Graba tu relato durante un máximo de 60 segundos.</p>
+						</div>
+					</div>
+					<div class="instruction">
+						<span>03</span>
+						<div>
+							<strong>Explora</strong>
+							<p>Observa la señal acústica y, cuando sea posible, las palabras de tu relato.</p>
+						</div>
+					</div>
+					<div class="instruction">
+						<span>04</span>
+						<div>
+							<strong>Reflexiona</strong>
+							<p>Descubre cómo cambia tu habla según lo que decides contar.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="resultados" class="section results-section" hidden>
+			<div class="section-heading">
+				<span class="eyebrow">03 / DESCUBRE TU HUELLA</span>
+				<h2>Así se ve tu relato.</h2>
+				<p>
+					Una representación exploratoria de esta intervención,
+					no una identificación personal ni una evaluación de capacidades.
+				</p>
+			</div>
+
+			<div id="demoNotice" class="demo-notice" hidden>
+				MODO DEMOSTRACIÓN: estos datos son ilustrativos y no provienen de una grabación.
+			</div>
+
+			<div class="results-grid">
+				<article class="result-card">
+					<span class="result-label">DURACIÓN</span>
+					<strong id="durationValue">—</strong>
+					<p>Tiempo registrado en esta intervención.</p>
+				</article>
+				<article class="result-card">
+					<span class="result-label">ENERGÍA DE LA SEÑAL</span>
+					<strong id="energyValue">—</strong>
+					<p>Indicador acústico relativo, no una medida de calidad.</p>
+				</article>
+				<article class="result-card">
+					<span class="result-label">PALABRAS TRANSCRITAS</span>
+					<strong id="wordCountValue">—</strong>
+					<p>Disponible si se obtuvo una transcripción.</p>
+				</article>
+			</div>
+
+			<div class="analysis-grid">
+				<article class="analysis-card">
+					<div class="analysis-heading">
+						<span class="eyebrow">A / SEÑAL ACÚSTICA</span>
+						<h3>La forma de tu voz</h3>
+					</div>
+					<canvas id="resultWaveCanvas" width="900" height="250"
+						aria-label="Resumen de la forma de onda"></canvas>
+					<p id="acousticExplanation">
+						La amplitud de la señal varía a medida que hablas.
+					</p>
+				</article>
+
+				<article class="analysis-card">
+					<div class="analysis-heading">
+						<span class="eyebrow">B / LENGUAJE</span>
+						<h3>Las palabras del relato</h3>
+					</div>
+					<div id="transcript" class="transcript-box">
+						No hay transcripción disponible.
+					</div>
+					<div id="wordCloud" class="word-cloud"></div>
+					<p id="languageExplanation">
+						Las palabras permiten explorar el contenido de lo que contamos.
+					</p>
+				</article>
+			</div>
+
+			<article class="fingerprint-card">
+				<div class="fingerprint-copy">
+					<span class="eyebrow">C / REPRESENTACIÓN INTEGRADA</span>
+					<h3>Tu huella de voz</h3>
+					<p>
+						Esta figura combina elementos visuales de la señal
+						y del contenido disponible. Es una ilustración científica
+						de un momento de habla, no una huella biométrica.
+					</p>
+				</div>
+				<canvas id="fingerprintCanvas" width="600" height="420"
+					aria-label="Huella visual exploratoria del relato"></canvas>
+			</article>
+
+			<div class="reflection-panel">
+				<span class="eyebrow">UNA PREGUNTA PARA SEGUIR EXPLORANDO</span>
+				<h3>¿Hablarías de la misma manera si contaras otra historia?</h3>
+				<p>
+					Nuestro ritmo, nuestras palabras y nuestras ideas pueden cambiar
+					según el tema, el contexto y la situación comunicativa.
+				</p>
+				<a href="#laboratorio" class="btn btn-primary">
+					Volver a explorar ↗
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<strong>LA HUELLA DE TU VOZ</strong>
+		<p>
+			Prototipo de comunicación pública de la ciencia.
+			Proyecto postulado a Ciencia Pública 2027.
+		</p>
+		<p>IDE SpA · Ciencia del lenguaje y comunicación</p>
+	</footer>
+</body>
+</html>
